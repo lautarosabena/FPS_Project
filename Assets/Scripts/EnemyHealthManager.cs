@@ -36,6 +36,7 @@ public class EnemyHealthManager : MonoBehaviour
     {
         currentHP -= damage;
         CheckHP();
+        Debug.Log(this.gameObject + " took " + damage + " damage");
     }
 
     public void Die()

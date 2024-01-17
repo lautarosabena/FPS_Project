@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 961289596}
   - component: {fileID: 961289595}
   - component: {fileID: 961289594}
+  - component: {fileID: 961289599}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Enemy
@@ -469,7 +470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f7feaf690aff14db704763f7035e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 3721879080010209156, guid: bb0683a19f483e342be57590d64802c2, type: 3}
+  bullet: {fileID: 1474620355975754869, guid: bb0683a19f483e342be57590d64802c2, type: 3}
+  _player: {fileID: 907919613}
   _bulletSpeed: 10
   _bulletDamage: 1
 --- !u!65 &961289595
@@ -543,13 +545,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961289593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.45, y: 2.523055, z: 9.53}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.45, y: 2.09, z: 9.53}
+  m_LocalScale: {x: 1, y: 2.9882, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &961289599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961289593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706393c236cd0554e9d840c43f593147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAlive: 1
+  _maxHP: 10
+  currentHP: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

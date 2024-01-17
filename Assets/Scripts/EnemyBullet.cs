@@ -14,12 +14,12 @@ public class EnemyBullet : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         startPos = transform.position;
         _player = FindObjectOfType<PlayerController>();
-
+        /*
         // Calcular la dirección en función del ángulo
         Vector3 dir = new Vector3(_player.transform.position.x, _player.transform.position.y, _player.transform.position.z);
 
         // Aplicar la velocidad a la dirección
-       _rb.velocity = dir * _force;
+       _rb.velocity = dir * _force;*/
         
         // Destruir la bala después de un tiempo para evitar que se acumulen
         Destroy(gameObject, _lifetime);

@@ -38,10 +38,7 @@ public class PlayerController : MonoBehaviour
     private void Shoot(){
          // Instantiate the projectile at the position and rotation of this transform
             Rigidbody clone;
-            clone = Instantiate(bulletPrefab, transform.position , player.rotation);
-
-            // Give the cloned object an initial velocity along the current
-            // object's Z axis
+            clone = Instantiate(bulletPrefab, transform.position , Quaternion.Euler(player.rotation.y +90, movX, 0));
             clone.velocity = transform.TransformDirection(Vector3.forward * 10);
         
         

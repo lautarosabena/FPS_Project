@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     private Rigidbody _rb;
     [SerializeField ]private float _lifetime = 5f; 
     private float _force = 10f;
-    private int _damageAmount; // Cantidad de daño infligido por la bala
+    private int _damageAmount = 1; // Cantidad de daño infligido por la bala
     Vector2 startPos;
     [HideInInspector] public float angulo = 0f; // Ángulo de la trayectoria (en grados)
     [HideInInspector] public int side = 1;
@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
         // Verificar si la bala colisiona con el jugador u otro objeto que tenga un script "HealthController"
         if(other.CompareTag("Enemy"))
         {
-            EnemyHealthManager healthManager = FindObjectOfType<EnemyHealthManager>();
+            EnemyHealthManager healthManager = other.GetComponent<EnemyHealthManager>();
             healthManager.TakeDamage(_damageAmount);
         }
 
