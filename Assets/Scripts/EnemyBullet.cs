@@ -29,7 +29,7 @@ public class EnemyBullet : MonoBehaviour
         {
             HealthManager healthManager = FindObjectOfType<HealthManager>();
             healthManager.TakeDamage(_damageAmount);
-            //Debug.Log("El jugador ha recibido " + _damageAmount + " puntos de daño. Le quedan " + healthManager.currentHP + " puntos de vida.");
+            Debug.Log("El jugador ha recibido " + _damageAmount + " puntos de daño. Le quedan " + healthManager.currentHP + " puntos de vida.");
             Destroy(gameObject);
         }
 

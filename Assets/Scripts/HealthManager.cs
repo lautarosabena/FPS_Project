@@ -6,21 +6,22 @@ using UnityEngine.SceneManagement;
 public class HealthManager : MonoBehaviour
 {
     public bool isAlive = true;
-    [SerializeField] private float _maxHP = 40;
-    [SerializeField] public float currentHP = 40;
+    [SerializeField] public float maxHP;
+    [SerializeField] public float currentHP;
+    public GameObject pantallaDerrota;
 
 
     private void Start()
     {
         isAlive = true;
-        currentHP = _maxHP;
+        currentHP = maxHP;
     }
 
     private void Update()
     {
         if(!isAlive)
         {
-            Die();
+            StartCoroutine(Die());
         }
     }
 
@@ -38,8 +39,12 @@ public class HealthManager : MonoBehaviour
         CheckHP();
     }
 
-    public void Die()
+    public IEnumerator Die()
     {
-        SceneManager.LoadScene("MainMenu");
+        pantallaDerrota.SetActive(true);
+        Debug.Log("GAME OVER");
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
+        Time.timeScale = 0;
     }
 }

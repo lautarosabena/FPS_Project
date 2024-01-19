@@ -2940,12 +2940,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f7feaf690aff14db704763f7035e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1474620355975754869, guid: bb0683a19f483e342be57590d64802c2, type: 3}
+  bullet: {fileID: 1474620355975754869, guid: 1c8023ddb781fae42a22a85750b4450f, type: 3}
   _player: {fileID: 0}
   _bulletSpeed: 10
-  _bulletDamage: 1
-  shootInterval: 0.4
+  _bulletDamage: 3
+  fireRate: 0.4
   canShoot: 1
+  fieldOfView: 90
+  numberOfRays: 10
+  rotationAngle: 0
 --- !u!114 &4109277156424890426
 MonoBehaviour:
   m_ObjectHideFlags: 0
