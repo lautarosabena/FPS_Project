@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class HealthManager : MonoBehaviour
 {
     public bool isAlive = true;
-    [SerializeField] private float _maxHP = 10;
-    [SerializeField] public float currentHP;
+    [SerializeField] private float _maxHP = 40;
+    [SerializeField] public float currentHP = 40;
 
 
     private void Start()

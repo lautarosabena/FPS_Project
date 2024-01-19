@@ -30,6 +30,8 @@ public class Bullet : MonoBehaviour
         {
             EnemyHealthManager healthManager = other.GetComponent<EnemyHealthManager>();
             healthManager.TakeDamage(_damageAmount);
+            Debug.Log("El enemigo " + other.name + " ha recibido " + _damageAmount + " puntos de daño. Le quedan " + healthManager.currentHP + " puntos de vida.");
+            Destroy(gameObject);
         }
 
     }

@@ -8,6 +8,7 @@ public class EnemyHealthManager : MonoBehaviour
     public bool isAlive = true;
     [SerializeField] private float _maxHP = 10;
     [SerializeField] public float currentHP;
+    public AudioSource hitSFX;
 
 
     private void Start()
@@ -35,6 +36,7 @@ public class EnemyHealthManager : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHP -= damage;
+        hitSFX.Play();
         CheckHP();
         Debug.Log(this.gameObject + " took " + damage + " damage");
     }

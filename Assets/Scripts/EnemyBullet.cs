@@ -8,20 +8,12 @@ public class EnemyBullet : MonoBehaviour
     private PlayerController _player;
     [SerializeField ]private float _lifetime = 5f; 
     private float _force = 10f;
-    private int _damageAmount; // Cantidad de daño infligido por la bala
+    private int _damageAmount = 1;
     Vector2 startPos;
     void Start() {
         _rb = GetComponent<Rigidbody>();
         startPos = transform.position;
         _player = FindObjectOfType<PlayerController>();
-        /*
-        // Calcular la dirección en función del ángulo
-        Vector3 dir = new Vector3(_player.transform.position.x, _player.transform.position.y, _player.transform.position.z);
-
-        // Aplicar la velocidad a la dirección
-       _rb.velocity = dir * _force;*/
-        
-        // Destruir la bala después de un tiempo para evitar que se acumulen
         Destroy(gameObject, _lifetime);
     }
 
@@ -33,11 +25,12 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Verificar si la bala colisiona con el jugador u otro objeto que tenga un script "HealthController"
         if(other.CompareTag("Player"))
         {
             HealthManager healthManager = FindObjectOfType<HealthManager>();
             healthManager.TakeDamage(_damageAmount);
+            //Debug.Log("El jugador ha recibido " + _damageAmount + " puntos de daño. Le quedan " + healthManager.currentHP + " puntos de vida.");
+            Destroy(gameObject);
         }
 
     }
